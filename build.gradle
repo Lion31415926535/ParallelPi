@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'        /* Needed for mainClassName property, also brings in the 'run' task */
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+application {
+    mainClass = 'Assn3'
+}
+
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Assn3'
+    }
+}
+base {
+    archivesName = 'Assn3'
+}
