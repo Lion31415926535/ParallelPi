@@ -10,7 +10,7 @@ public class TaskQueue {
         ArrayList<Integer> numbers = createListOfNumbers();
 
         for (Integer number : numbers) {
-            taskQueue.add(number);
+            this.taskQueue.add(number);
         }
     }
 
@@ -25,5 +25,12 @@ public class TaskQueue {
         java.util.Collections.shuffle(listOfNumbers);
 
         return listOfNumbers;
+    }
+
+    // Returns the next number in the queue
+    public int getNextNumber() {
+        int nextNumber = this.taskQueue.getFirst();
+        taskQueue.remove();
+        return nextNumber;
     }
 }
