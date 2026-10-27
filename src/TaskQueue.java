@@ -29,8 +29,15 @@ public class TaskQueue {
 
     // Returns the next number in the queue
     public int getNextNumber() {
+        if (isEmpty()) {
+            return -1;
+        }
         int nextNumber = this.taskQueue.getFirst();
         taskQueue.remove();
         return nextNumber;
+    }
+
+    private boolean isEmpty() {
+        return this.taskQueue.isEmpty();
     }
 }
