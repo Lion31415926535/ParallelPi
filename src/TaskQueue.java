@@ -5,7 +5,7 @@ public class TaskQueue {
     private LinkedList<Integer> taskQueue;
 
     public TaskQueue() {
-        taskQueue = new LinkedList<>();
+        this.taskQueue = new LinkedList<>();
 
         ArrayList<Integer> numbers = createListOfNumbers();
 
