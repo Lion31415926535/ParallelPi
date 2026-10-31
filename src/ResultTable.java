@@ -15,7 +15,7 @@ public class ResultTable {
      * @param key The position of the hash map to store the value at
      * @param value The value to be stored
      */
-    public void setValue(int key, char value) {
+    public synchronized void setValue(int key, char value) {
         this.resultTable.put(key, value);
 
         counter++;

@@ -38,7 +38,7 @@ public class TaskQueue {
      * If the queue is empty then returns -1
      * @return The number for the next digit of pi to be calculated
      */
-    public int getNextNumber() {
+    public synchronized int getNextNumber() {
         if (isEmpty()) {
             return -1;
         }

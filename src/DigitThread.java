@@ -28,9 +28,7 @@ public class DigitThread implements Runnable {
      * @return The position of the next digit to compute
      */
     private int getTask() {
-        synchronized (this.queue) {
-            return this.queue.getNextNumber();
-        }
+        return this.queue.getNextNumber();
     }
 
     /**
@@ -39,10 +37,7 @@ public class DigitThread implements Runnable {
      * @param value The value of the digit at that postion
      */
     private void storeDigit(int key, char value) {
-        synchronized (this.results) {
-            this.results.setValue(key,value);
-        }
-
+        this.results.setValue(key,value);
     }
 
     /**
@@ -55,7 +50,7 @@ public class DigitThread implements Runnable {
         String digits = Integer.toString(calculateDigit.getDecimal(n));
 
         // Returns the first digit of the string
-        if (digits.length() == 8) {
+        if (digits.length() <= 8) {
             return '0';
         } else {
             return digits.charAt(0);
