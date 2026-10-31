@@ -9,7 +9,12 @@ public class ResultTable {
         this.counter = 0;
     }
 
-    // Sets a value for a given key
+    /**
+     * Stores a value of pi at the given postion
+     * Counts how many digits have been calculated and prints out dots every 10 digits
+     * @param key The position of the hash map to store the value at
+     * @param value The value to be stored
+     */
     public void setValue(int key, char value) {
         this.resultTable.put(key, value);
 
@@ -23,7 +28,12 @@ public class ResultTable {
         System.out.flush();
     }
 
-    // Gets the value for a given key
+
+    /**
+     * Gets the value for a given key
+     * @param key The key for the location of the desired value
+     * @return The digit at the desired location, returned as a character
+     */
     public char getValue(int key) {
         return this.resultTable.get(key);
     }

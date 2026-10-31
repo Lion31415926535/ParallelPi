@@ -7,6 +7,10 @@ public class DigitThread implements Runnable {
         this.results = results;
     }
 
+    /**
+     * Calculates digits of Pi from the task queue and stores the value in results table
+     * Loops until the task queue is empty
+     */
     public void run() {
         while (true) {
             int task = getTask();
@@ -19,12 +23,21 @@ public class DigitThread implements Runnable {
         }
     }
 
+    /**
+     * Gets the next digit from the task queue
+     * @return The position of the next digit to compute
+     */
     private int getTask() {
         synchronized (this.queue) {
             return this.queue.getNextNumber();
         }
     }
 
+    /**
+     * Stores a computed digit in the results table
+     * @param key The position in the hash map to store the digit (given by the digits position)
+     * @param value The value of the digit at that postion
+     */
     private void storeDigit(int key, char value) {
         synchronized (this.results) {
             this.results.setValue(key,value);
@@ -32,7 +45,10 @@ public class DigitThread implements Runnable {
 
     }
 
-    // Returns the nth digit of pi as a character
+    /**
+     * @param n The digit of pi to be calculated
+     * @return The value of that digit of pi
+     */
     private char getDigit(int n) {
         Bpp calculateDigit = new Bpp();
 

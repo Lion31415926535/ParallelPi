@@ -4,6 +4,9 @@ import java.util.ArrayList;
 public class TaskQueue {
     private LinkedList<Integer> taskQueue;
 
+    /**
+     * Initializes the task queue and adds numbers to it
+     */
     public TaskQueue() {
         this.taskQueue = new LinkedList<>();
 
@@ -14,7 +17,10 @@ public class TaskQueue {
         }
     }
 
-    // Creates an array list of numbers 1 to 1000 and randomizes the order
+    /**
+     * Creates an array list of numbers 1 to 1000 and randomizes the order
+     * @return An ArrayList containing numbers 1 to 1000 in randomized order
+     */
     private ArrayList<Integer> createListOfNumbers() {
         ArrayList<Integer> listOfNumbers = new ArrayList<>();
 
@@ -27,7 +33,11 @@ public class TaskQueue {
         return listOfNumbers;
     }
 
-    // Returns the next number in the queue
+    /**
+     * Returns the next number in the queue
+     * If the queue is empty then returns -1
+     * @return The number for the next digit of pi to be calculated
+     */
     public int getNextNumber() {
         if (isEmpty()) {
             return -1;
@@ -37,6 +47,9 @@ public class TaskQueue {
         return nextNumber;
     }
 
+    /**
+     * @return Returns true if the queue is empty
+     */
     private boolean isEmpty() {
         return this.taskQueue.isEmpty();
     }
