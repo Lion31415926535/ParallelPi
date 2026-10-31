@@ -6,6 +6,8 @@ public class Assn3 {
 
         Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
 
+        long startTime = System.currentTimeMillis();
+
         for (int thread = 0; thread < Runtime.getRuntime().availableProcessors(); thread ++) {
             threads[thread] = new Thread(new DigitThread(queue, results));
             threads[thread].start();
@@ -20,10 +22,14 @@ public class Assn3 {
             
         }
 
+        long endTime = System.currentTimeMillis();
+
         System.out.print("3.");
         for (int i=1;i<=1000;i++) {
             System.out.print(results.getValue(i));
         }
+
+        System.out.printf("\nPi Computation took %d ms\n", endTime - startTime);
     }
 
     
